@@ -1,0 +1,23 @@
+{
+    "name": "team-profile-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "directories": {
+        "test": "test",
+        "lib": "lib"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest"
+
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "inquirer": "8.2.4"
+    },
+    "devDependencies": {
+        "jest": "29.4.3"
+    }
+}
