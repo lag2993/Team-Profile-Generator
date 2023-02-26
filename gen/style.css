@@ -1,0 +1,78 @@
+.text{
+    display: flex;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: aqua;
+    flex-direction: column;
+}
+.container{
+    background-color: black;
+
+}
+.card{
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    background-color: orange;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border:black;
+    
+}
+.team-cards{
+    width: auto;
+    flex-direction: row;
+}
+.card-header{
+    margin: auto;
+    color: black;
+    background-color: orange;
+    flex-direction: column;
+}
+.card-name{
+    background-color:black;
+    width: 500px;
+    color: white;
+}
+.card-role{
+    color: white;
+    background-color: black;
+}
+.card-body{
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color:aqua;
+
+}
+.card-id{
+    color: white;
+    background-color: black;
+    width: auto;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+}
+.card-email{
+    color: black;
+    background-color:white;
+    width: auto;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+
+}
+.card-unique{
+    color: white;
+    background-color: black;
+    width: auto;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+
+}

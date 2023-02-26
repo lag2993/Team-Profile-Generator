@@ -4,9 +4,9 @@ const path = require("path");
 const fs = require('fs');
 
 // Bring in classes
-const Mngr = require('./lib/Mngr');
-const Engnr =  require('./lib/Engnr');
-const Intrn = require('./lib/Intrn');
+const Manager = require('./lib/Mngr');
+const Engineer =  require('./lib/Engnr');
+const Intern = require('./lib/Intrn');
 const cardTmplt = require('./lib/cardTemplate');
 
 let teamMembers = [];
@@ -18,17 +18,17 @@ function teamInquire(){
     inquirer.prompt([
         {
             type: 'input',
-            name: 'MngrName',
+            name: 'ManagerName',
             message:"What is the Manager's name?",
         },
         {
             type: 'input',
-            name: 'MngrId',
+            name: 'ManagerId',
             message:"What is the Manager's employee ID?",
         },
         {
             type: 'input',
-            name: 'MngrEmail',
+            name: 'ManagerEmail',
             message:"What is the Manager's email?",
         },
         {
@@ -37,68 +37,68 @@ function teamInquire(){
             message:"What is the Manager's Office Number?",
         },
     ]).then((responses)=>{
-        const teamMngr = new Mngr(
-            responses.MngrName,
-            responses.MngrId,
-            responses.MngrEmail,
+        const teamManager = new Manager(
+            responses.ManagerName,
+            responses.ManagerId,
+            responses.ManagerEmail,
             responses.OfficeNumber
         );
-        teamMembers.push(teamMngr);
+        teamMembers.push(teamManager);
         addAnother();
 
     })
 }
 
-function recruitEngnr(){
+function recruitEngineer(){
     inquirer.prompt([
         {
             type: 'input',
-            name: 'EngnrName',
+            name: 'EngineerName',
             message:"What is the Engineer's name?",
         },
         {
             type: 'input',
-            name: 'EngnrID',
+            name: 'EngineerID',
             message:"What is the Engineer's employee ID?",
         },
         {
             type: 'input',
-            name: 'EngnrEmail',
+            name: 'EngineerEmail',
             message:"What is the Engineer's email?",
         },
         {
             type: 'input',
             name: 'github',
-            message:"What is the link to the Engineer's github?",
+            message:"What is the username for the Engineer's github?",
         },
         
     ]).then((responses)=>{
-        const teamEngnr = new Engnr(
-            responses.EngnrName,
-            responses.EngnrID,
-            responses.EngnrEmail,
+        const teamEngineer = new Engineer(
+            responses.EngineerName,
+            responses.EngineerID,
+            responses.EngineerEmail,
             responses.github
         );
-        teamMembers.push(teamEngnr);
+        teamMembers.push(teamEngineer);
         addAnother();
     })
 }
 
-function recruitIntrn(){
+function recruitIntern(){
     inquirer.prompt([
         {
             type: 'input',
-            name: 'IntrnName',
+            name: 'InternName',
             message:"What is the Intern's name?",
         },
         {
             type: 'input',
-            name: 'IntrnID',
+            name: 'InternID',
             message:"What is the Interns's employee ID?",
         },
         {
             type: 'input',
-            name: 'IntrnEmail',
+            name: 'InternEmail',
             message:"What is the Intern's email?",
         },
         {
@@ -108,13 +108,13 @@ function recruitIntrn(){
         },
         
     ]).then((responses)=>{
-        const teamIntrn = new Intrn(
-            responses.IntrnName,
-            responses.IntrnID,
-            responses.IntrnEmail,
+        const teamIntern = new Intern(
+            responses.InternName,
+            responses.InternID,
+            responses.InternEmail,
             responses.school
         );
-        teamMembers.push(teamIntrn);
+        teamMembers.push(teamIntern);
         addAnother();
     })
 }
@@ -133,10 +133,10 @@ function addAnother(){
         }]).then((choice)=>{
             switch(choice.chooseTeam){
                 case 'Engineer':
-                    recruitEngnr();
+                    recruitEngineer();
                 break;
                 case 'Intern':
-                    recruitIntrn();
+                    recruitIntern();
                 break;
                 default:
                     createTeam();
