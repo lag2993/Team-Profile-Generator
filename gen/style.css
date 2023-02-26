@@ -9,7 +9,12 @@
 }
 .container{
     background-color: black;
+    flex-direction:column;
+    flex-wrap: wrap;
 
+}
+.row{
+    flex-direction: row;
 }
 .card{
     text-align: center;
@@ -25,7 +30,7 @@
 }
 .team-cards{
     width: auto;
-    flex-direction: row;
+    flex-direction: column;
 }
 .card-header{
     margin: auto;
